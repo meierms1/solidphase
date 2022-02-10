@@ -1,0 +1,68 @@
+=== If no file names and line numbers are shown below, one can run
+            addr2line -Cpfie my_exefile my_line_address
+    to convert `my_line_address` (e.g., 0x4a6b) into file name and line number.
+    Or one can use amrex/Tools/Backtrace/parse_bt.py.
+
+=== Please note that the line number reported by addr2line may not be accurate.
+    One can use
+            readelf -wl my_exefile | grep my_line_address'
+    to find out the offset for that line.
+
+ 0: ../../../alamo/bin/alamo-3d-profile-g++() [0x68b809]
+    amrex::BLBackTrace::print_backtrace_info(_IO_FILE*)
+/home/mmeierdo/alamo/amrex/Src/Base/AMReX_BLBackTrace.cpp:179:39
+
+ 1: ../../../alamo/bin/alamo-3d-profile-g++() [0x68d478]
+    amrex::BLBackTrace::handler(int)
+/home/mmeierdo/alamo/amrex/Src/Base/AMReX_BLBackTrace.cpp:85:15
+
+ 2: ../../../alamo/bin/alamo-3d-profile-g++() [0x5d102e]
+    std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_is_local() const inlined at /opt/ohpc/pub/compiler/gcc/9.3.0/include/c++/9.3.0/bits/basic_string.h:231:6 in amrex::FileOpenFailed(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+/opt/ohpc/pub/compiler/gcc/9.3.0/include/c++/9.3.0/bits/basic_string.h:222:26
+std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose()
+/opt/ohpc/pub/compiler/gcc/9.3.0/include/c++/9.3.0/bits/basic_string.h:231:6
+std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()
+/opt/ohpc/pub/compiler/gcc/9.3.0/include/c++/9.3.0/bits/basic_string.h:658:9
+amrex::FileOpenFailed(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+/home/mmeierdo/alamo/amrex/Src/Base/AMReX_Utility.cpp:167:43
+
+ 3: ../../../alamo/bin/alamo-3d-profile-g++() [0x6873c2]
+    amrex::WriteMultiLevelPlotfile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int, amrex::Vector<amrex::MultiFab const*, std::allocator<amrex::MultiFab const*> > const&, amrex::Vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&, amrex::Vector<amrex::Geometry, std::allocator<amrex::Geometry> > const&, double, amrex::Vector<int, std::allocator<int> > const&, amrex::Vector<amrex::IntVect, std::allocator<amrex::IntVect> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, amrex::Vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&)::{lambda()#1}::operator()() const
+/home/mmeierdo/alamo/amrex/Src/Base/AMReX_PlotFileUtil.cpp:205:39
+
+ 4: ../../../alamo/bin/alamo-3d-profile-g++() [0x68889f]
+    std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_is_local() const inlined at /opt/ohpc/pub/compiler/gcc/9.3.0/include/c++/9.3.0/bits/basic_string.h:231:6 in amrex::WriteMultiLevelPlotfile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int, amrex::Vector<amrex::MultiFab const*, std::allocator<amrex::MultiFab const*> > const&, amrex::Vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&, amrex::Vector<amrex::Geometry, std::allocator<amrex::Geometry> > const&, double, amrex::Vector<int, std::allocator<int> > const&, amrex::Vector<amrex::IntVect, std::allocator<amrex::IntVect> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, amrex::Vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&)
+/opt/ohpc/pub/compiler/gcc/9.3.0/include/c++/9.3.0/bits/basic_string.h:222:26
+std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose()
+/opt/ohpc/pub/compiler/gcc/9.3.0/include/c++/9.3.0/bits/basic_string.h:231:6
+std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()
+/opt/ohpc/pub/compiler/gcc/9.3.0/include/c++/9.3.0/bits/basic_string.h:658:9
+~<lambda>
+/home/mmeierdo/alamo/amrex/Src/Base/AMReX_PlotFileUtil.cpp:196:20
+amrex::WriteMultiLevelPlotfile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int, amrex::Vector<amrex::MultiFab const*, std::allocator<amrex::MultiFab const*> > const&, amrex::Vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&, amrex::Vector<amrex::Geometry, std::allocator<amrex::Geometry> > const&, double, amrex::Vector<int, std::allocator<int> > const&, amrex::Vector<amrex::IntVect, std::allocator<amrex::IntVect> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, amrex::Vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&)
+/home/mmeierdo/alamo/amrex/Src/Base/AMReX_PlotFileUtil.cpp:208:9
+
+ 5: ../../../alamo/bin/alamo-3d-profile-g++() [0x55bee1]
+    Integrator::Integrator::WritePlotFile(double, amrex::Vector<int, std::allocator<int> >, bool, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) const
+/opt/ohpc/pub/compiler/gcc/9.3.0/include/c++/9.3.0/bits/basic_string.h:222:26
+
+ 6: ../../../alamo/bin/alamo-3d-profile-g++() [0x452f56]
+    Integrator::Integrator::WritePlotFile(bool) const [clone .constprop.0]
+/opt/ohpc/pub/compiler/gcc/9.3.0/include/c++/9.3.0/bits/stl_vector.h:677:15
+
+ 7: ../../../alamo/bin/alamo-3d-profile-g++() [0x56152d]
+    Integrator::Integrator::InitData()
+src/Integrator/Integrator.cpp:431:5
+
+ 8: ../../../alamo/bin/alamo-3d-profile-g++() [0x430b39]
+    main
+src/alamo.cc:65:31
+
+ 9: /lib64/libc.so.6(__libc_start_main+0xf3) [0x7f684ebe27b3]
+    __libc_start_main
+??:0
+
+10: ../../../alamo/bin/alamo-3d-profile-g++() [0x43954e]
+    _start
+??:0
+
