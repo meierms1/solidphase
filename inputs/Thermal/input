@@ -63,23 +63,23 @@ pf.eta.bc.val.yhi = 0.0
 
 thermal.on = 1 #activates the thermal functions
 
-thermal.rho_ap = value 
-thermal.rho_htpb = value
+thermal.rho_ap = 1950 # [kg/m3] 
+thermal.rho_htpb = 920 # [kg/m3]
 
-thermal.k_ap = value
-thermal.k_htpb = value
+thermal.k_ap = 5.5 #[W/mK]
+thermal.k_htpb = 0.283 #[W/mK]
 thermal.k0 = value
-thermal.k_comb = value
+thermal.k_comb = 0.43 #[W/mK] for 0.8ap 0.16htpb 0.04al
 
-thermal.cp_ap = value
-thermal.cp_htpb = value
+thermal.cp_ap = 180 #[J/kgK]
+thermal.cp_htpb = 2386 #[J/kgK]
 
-thermal.q_ap = value 
-thermal.q_htpb = value 
-thermal.q_comb = value 
+thermal.q_ap = 20 #[kW/m2] <- made up
+thermal.q_htpb = 2 #[kW/m2] <- made up 
+thermal.q_comb = 10 #[kW/m2] <- literature
 
-thermal.ae_ap = value 
-thermal.ae_htpb = value 
+thermal.ae_ap = 102.5 # [J/g] 
+thermal.ae_htpb = 11.5 # [kcal/mol] 
 
 
 
