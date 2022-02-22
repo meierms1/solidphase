@@ -1,5 +1,5 @@
 alamo.program = flame
-plot_file = output_0214
+plot_file = output_0221_4
 amr.plot_dt = 0.01
 amr.max_level = 6 #8 #7 #5 #6
 amr.max_grid_size = 50
@@ -65,31 +65,31 @@ pf.eta.bc.val.yhi = 0.0
 
 thermal.on = 1 #activates the thermal functions
 
-thermal.rho_ap = 1950 # [kg/m3] 
-thermal.rho_htpb = 920 # [kg/m3]
+thermal.rho_ap = 1950.0 # [kg/m3] 
+thermal.rho_htpb = 920.0 # [kg/m3]
 
-#thermal.k_ap = 5.5 #[W/mK]
-#thermal.k_htpb = 0.283 #[W/mK]
-#thermal.k0 = 0.43 
-#thermal.k_comb = 0.43 #[W/mK] for 0.8ap 0.16htpb 0.04al
+thermal.k_ap = 5500.0 # 5.5 [W/mK]
+thermal.k_htpb = 283.0 # 0.283[W/mK]
+thermal.k0 = 430.0 #0.43 
+thermal.k_comb = 430.0 # 0.43[W/mK] for 0.8ap 0.16htpb 0.04al
 
-#thermal.cp_ap = 180 #[J/kgK]
-#thermal.cp_htpb = 2386 #[J/kgK]
+thermal.cp_ap = 180.0 #[J/kgK]
+thermal.cp_htpb = 2386.0 #[J/kgK]
 
-#thermal.q_ap = 20 #[kW/m2] <- made up
-#thermal.q_htpb = 2 #[kW/m2] <- made up 
-#thermal.q_comb = 10 #[kW/m2] <- literature
+thermal.q_ap = 20000.0 #[kW/m2] <- made up
+thermal.q_htpb = 2000.0 #[kW/m2] <- made up 
+thermal.q_comb = 10000.0 #[kW/m2] <- literature
 
 #thermal.ae_ap = 102.5 # [J/g] 
 #thermal.ae_htpb = 11.5 # [kcal/mol] 
 
 
 thermal.temp.bc.type.xlo = neumann
-themal.temp.bc.type.xhi  = neumann
+thermal.temp.bc.type.xhi  = neumann
 thermal.temp.bc.type.ylo = neumann
 thermal.temp.bc.type.yhi = neumann
 thermal.temp.bc.val.xlo = 0.0
-thermal.temp.bc.val.xhi = 1.0
+thermal.temp.bc.val.xhi = 0.0
 thermal.temp.bc.val.ylo = 0.0
 thermal.temp.bc.val.yhi = 0.0
 
