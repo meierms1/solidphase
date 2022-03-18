@@ -1,5 +1,5 @@
 alamo.program = flame
-plot_file = output_0214
+plot_file = output_0301
 amr.plot_dt = 0.01
 amr.max_level = 6 #8 #7 #5 #6
 amr.max_grid_size = 50
