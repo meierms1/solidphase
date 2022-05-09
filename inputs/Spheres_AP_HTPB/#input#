@@ -1,8 +1,7 @@
-s
 alamo.program = flame
-plot_file = output_0214
+plot_file = output_0301
 amr.plot_dt = 0.01
-amr.max_level = 5 #8 #7 #5 #6
+amr.max_level = 6 #8 #7 #5 #6
 amr.max_grid_size = 50
 amr.blocking_factor = 2
 amr.regrid_int = 100
@@ -43,19 +42,19 @@ pf.w0 = 0.0
 
 phi.ic.type = psread
 phi.ic.psread.eps = 0.0005
-phi.ic.psread.filename = /home/mmeierdo/SolidPhase/inputs/Packings/1644878755.367383/3d.xyzr
+phi.ic.psread.filename = /home/mmeierdo/SolidPhase/inputs/Packings/1644946205.703783/2d_z0.000.xyzr
 
 
 pf.eta.bc.type.xlo = dirichlet
 pf.eta.bc.type.xhi = dirichlet
 pf.eta.bc.type.ylo = periodic
 pf.eta.bc.type.yhi = periodic
-pf.eta.bc.type.zlo = periodic
-pf.eta.bc.type.zhi = periodic
+#pf.eta.bc.type.zlo = periodic
+#pf.eta.bc.type.zhi = periodic
 pf.eta.bc.val.xlo = 0.0
 pf.eta.bc.val.xhi = 1.0
 pf.eta.bc.val.ylo = 0.0
 pf.eta.bc.val.yhi = 0.0
-pf.eta.bc.val.zlo = 0.0
-pf.eta.bc.val.zhi = 0.0
+#pf.eta.bc.val.zlo = 0.0
+#pf.eta.bc.val.zhi = 0.0
 
