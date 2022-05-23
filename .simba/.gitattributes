@@ -1,4 +1,2 @@
 
 *.db diff=simba-diff merge=simba-merge
-*.db diff=simba-diff merge=simba-merge
-*.db diff=simba-diff merge=simba-merge
