@@ -10,8 +10,7 @@ amr.grid_eff = 0.8
 amr.refinement_criterion = 0.001
 amr.refinement_criterion_temp = 293.16
 
-
-pf.disloc = -0.01
+pf.disloc = 0.0
 pf.etamult = 0.5
 pf.etasum = 0.5
 pf.epsmult = 4.0
@@ -19,36 +18,33 @@ pf.epsmult = 4.0
 elastic.type = disable
 
 amr.n_cell = 8 2 2
-geometry.prob_lo = 0.0 -0.01 -0.01 # [ m ] 
-geometry.prob_hi = 0.05 0.01 0.01 # [ m ]
+geometry.prob_lo = 0.0 0.0 -0.01 # [ m ] 
+geometry.prob_hi = 0.05 0.0125 0.01 # [ m ]
 
 geometry.is_periodic = 0 1 1
 
-timestep = 5e-5 # 0.00005 # [s]
-stop_time = 0.2
+timestep = 5e-4 # 0.00005 # [s]
+stop_time = 2.0
 
-pf.eps = 0.0001 #0.0005 # [m]
+pf.eps = 0.001 #0.0005 # [m]
 pf.lambda = 0.001
 
+### Constant IC ###
+phi.ic.type = constant
+phi.ic.constant.value = 1.0
+
 # FINALIZED values for pure AP
-pf.n_ap = 1.7 # 1.042 # [ Unitless ]
+pf.n_ap   = 1.7 # 1.042 # [ Unitless ]
 pf.n_htpb = 0.0 # FIXED
 pf.n_comb = 0.0 # FIXED
 
-pf.P = 2.0 # 4.0 ## Pressure is to be inputed in MPa units.
+pf.P = 1.0 # 4.0 ## Pressure is to be inputed in MPa units.
 
 pf.kappa = 1.0
 pf.gamma = 0.02726
 pf.w1 = 1.0
 pf.w12 = 2.0
 pf.w0 = 0.0
-
-pf.time_print1 = 1.0
-pf.time_print2 = 0.0098
-
-### Constant IC ###
-phi.ic.type = constant
-phi.ic.constant.value = 1.0
 
 pf.eta.bc.type.xlo = dirichlet
 pf.eta.bc.type.xhi = dirichlet
@@ -65,7 +61,7 @@ pf.eta.bc.val.yhi = 0.0
 
 # THERMAL VARIABLES
 
-thermal.m_ap = 40.22  # [mm/s]
+thermal.m_ap = 0.0 # 40.22  # [mm/s]
 thermal.m_htpb = 0.1  # [mm/s]
 thermal.m_comb = 10.0 # [mm/s]
 pf.Ea = 1.0 # 4.0
@@ -115,5 +111,13 @@ thermal.b_ap = 3.448e6
 thermal.b_htpb = 1.409e6
 thermal.b_comb = 2.008e7
 
-
+eta.ic.type = laminate
+eta.ic.laminate.number_of_inclusions = 1
+eta.ic.laminate.center = 0.05 0 0
+eta.ic.laminate.thickness = 0.025
+eta.ic.laminate.orientation = 1 0
+eta.ic.laminate.mollifier = gaussian
+eta.ic.laminate.eps = 0.0005
+eta.ic.laminate.singlefab = 1
+eta.ic.laminate.invert = 1
 
