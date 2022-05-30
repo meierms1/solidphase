@@ -14,6 +14,7 @@ pf.disloc = 0.0
 pf.etamult = 0.5
 pf.etasum = 0.5
 pf.epsmult = 4.0
+pf.addfactor = 1.966
 
 elastic.type = disable
 
@@ -24,9 +25,9 @@ geometry.prob_hi = 0.05 0.0125 0.01 # [ m ]
 geometry.is_periodic = 0 1 1
 
 timestep = 5e-4 # 0.00005 # [s]
-stop_time = 2.0
+stop_time = 3.0
 
-pf.eps = 0.001 #0.0005 # [m]
+pf.eps = 0.0005 #0.0005 # [m]
 pf.lambda = 0.001
 
 ### Constant IC ###
