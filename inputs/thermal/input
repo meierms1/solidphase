@@ -2,7 +2,7 @@ alamo.program = flame
 plot_file = /home/mmeierdo/SolidPhase/output
 amr.plot_dt = 0.01
 #amr.plot_int = 1
-amr.max_level = 6 #8 #7 #5 #6
+amr.max_level = 9 #8 #7 #5 #6
 amr.max_grid_size = 50
 amr.blocking_factor = 2
 amr.regrid_int = 100
@@ -14,7 +14,7 @@ pf.disloc = 0.0
 pf.etamult = 0.5
 pf.etasum = 0.5
 pf.epsmult = 4.0
-pf.addfactor = 1.966
+thermal.correction_factor = 0.5621 #1.7789
 
 elastic.type = disable
 
@@ -24,15 +24,15 @@ geometry.prob_hi = 0.05 0.0125 0.01 # [ m ]
 
 geometry.is_periodic = 0 1 1
 
-timestep = 5e-4 # 0.00005 # [s]
+timestep = 5e-2 # 0.00005 # [s]
 stop_time = 3.0
 
-pf.eps = 0.0005 #0.0005 # [m]
+pf.eps = 0.005 #0.0005 # [m]
 pf.lambda = 0.001
 
 ### Constant IC ###
 phi.ic.type = constant
-phi.ic.constant.value = 1.0
+phi.ic.constant.value = 0.0
 
 # FINALIZED values for pure AP
 pf.n_ap   = 1.7 # 1.042 # [ Unitless ]
@@ -85,6 +85,7 @@ thermal.k_htpb = 0.13 # 0.283[W/mK]
 thermal.k0 = 0.0 #0.43 
 thermal.k_comb = 0.3 # 0.43[W/mK] for 0.8ap 0.16htpb 0.04al
 
+eta.
 thermal.cp_ap = 1297.9 #[J/kgK]
 thermal.cp_htpb = 2418.29 #[J/kgK]
 
@@ -115,10 +116,10 @@ thermal.b_comb = 2.008e7
 eta.ic.type = laminate
 eta.ic.laminate.number_of_inclusions = 1
 eta.ic.laminate.center = 0.05 0 0
-eta.ic.laminate.thickness = 0.025
+eta.ic.laminate.thickness = 0.05
 eta.ic.laminate.orientation = 1 0
 eta.ic.laminate.mollifier = gaussian
-eta.ic.laminate.eps = 0.0005
+eta.ic.laminate.eps = 0.00005
 eta.ic.laminate.singlefab = 1
 eta.ic.laminate.invert = 1
 
