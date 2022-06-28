@@ -17,8 +17,8 @@ parser.add_argument('--pf', default=0.3, type=float, help='Packing Factor')
 parser.add_argument('--seed', default=1, type=int, help='Randomization seed')
 args=parser.parse_args()
 
-geometry_prob_lo = [0.0, -0.2, -0.2]
-geometry_prob_hi = [2.0, 0.2, 0.2]
+geometry_prob_lo = [0.0, 0.0, 0.0]
+geometry_prob_hi = [0.08, 0.05, 0.05]
 
 
 db = simba.open()
@@ -27,7 +27,8 @@ ct = datetime.datetime.now()
 
 record = dict()
 record['HASH'] = str(uuid.uuid4())
-record['DIR'] = "Packings/" + str(ct.timestamp())
+file_name = str(ct.timestamp())
+record['DIR'] = "Packings/" + file_name
 record['Time'] = str(ct)
 os.mkdir("../" + record['DIR'])
 record['radius'] = args.radius
@@ -54,6 +55,7 @@ region = +min_x & -max_x & +min_y & -max_y  & +min_z & -max_z
 print("radius",radius)
 print(geometry_prob_lo,geometry_prob_hi)
 print("packing factor",packing_factor)
+print("folder name: " + file_name )
 result = openmc.model.pack_spheres(radius, region, pf=packing_factor,seed=args.seed)
 print(len(result),"spheres")
 print(result)
