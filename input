@@ -9,6 +9,7 @@ amr.regrid_int = 100
 amr.grid_eff = 0.8
 amr.refinement_criterion = 0.001
 amr.refinement_criterion_temp = 293.16
+amr.refinement_restriction = 0.1
 
 amr.n_cell = 8 2 2
 geometry.prob_lo = 0.0 -0.01 0.0 # [ m ] 
@@ -103,13 +104,15 @@ thermal.correction_factor = 0.5621 #1.7789
 
 pressure.P = 2.0 # 4.0 ## Pressure is to be inputed in MPa units.
 
-pressure.a_ap = 1.123e7
-pressure.a_htpb = 4.772e6
-pressure.a_comb = 1.749e7
+pressure.a1 = 0.46
+pressure.a2 = 1.114 
+pressure.a3 = 2.797
 
-pressure.b_ap = 3.448e6
-pressure.b_htpb = 1.409e6
-pressure.b_comb = 2.008e7
+pressure.b1 = -0.58
+pressure.b2 = -0.667
+pressure.b3 = 0.3225
+
+pressure.c1 = -0.09906
 
 ## ELASTIC VARIABLES ######################################################### ELASTIC
 
