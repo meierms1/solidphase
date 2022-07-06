@@ -109,8 +109,8 @@ pressure.a1 = 0.46
 pressure.a2 = 1.114 
 pressure.a3 = 2.797
 
-pressure.b1 = -0.58
-pressure.b2 = -0.667
+pressure.b1 = 0.42
+pressure.b2 = 0.323
 pressure.b3 = 0.3225
 
 pressure.c1 = -0.09906
