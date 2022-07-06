@@ -19,13 +19,14 @@ geometry.is_periodic = 0 1 1
 
 ## TIME EPS ############################################################ TIME EPS
 
-timestep = 5e-5 # 0.00005 # [s]
+timestep = 5e-4 # 0.00005 # [s]
 stop_time = 10.0
 
 pf.eps = 0.00005 #0.0005 # [m]
 pf.lambda = 0.001
 
 ### Constant IC ############################################################ IC
+phi.zeta_0 = 0.05
 phi.ic.type = laminate
 phi.ic.number_of_inclusions = 1
 phi.ic.laminate.center = 0.0 0.0 0.0 
