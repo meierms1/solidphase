@@ -1,0 +1,145 @@
+alamo.program = flame
+plot_file = /home/mmeierdo/SolidPhase/output
+amr.plot_dt = 0.01
+#amr.plot_int = 1
+amr.max_level = 6 #8 #7 #5 #6
+amr.max_grid_size = 50
+amr.blocking_factor = 2
+amr.regrid_int = 100
+amr.grid_eff = 0.8
+amr.refinement_criterion = 0.001
+amr.refinement_criterion_temp = 293.16
+
+elastic.type = disable
+
+# FULL SIZE, Packed Spheres
+#amr.n_cell = 8 2 2
+#geometry.prob_lo = 0.0 -0.2 -0.2 # [mm]
+#geometry.prob_hi = 2.0 0.2 0.2 # [mm]
+
+amr.n_cell = 8 2 2
+geometry.prob_lo = 0.0 -0.001 -0.001
+geometry.prob_hi = 0.06 0.01 0.01
+
+geometry.is_periodic = 0 1 1
+
+timestep = 0.00005 # 0.00005 # [s]
+stop_time = 0.2
+
+pf.eps = 0.00005 #0.0005 # [mm]
+pf.lambda = 0.001
+
+# FINALIZED values for pure AP
+#pf.r_ap = 1.222 # [ mm / s ]
+pf.n_ap = 1.042 # [ Unitless ]
+
+# FINALIZED from sandwich tests
+#pf.r_htpb = 0.1 # FIXED
+#pf.r_comb = 10.0 # FIXED
+pf.n_htpb = 0.0 # FIXED
+pf.n_comb = 0.0 # FIXED
+
+pf.P = 6.0 ## Pressure is to be inputed in MPa units.
+
+pf.kappa = 1.0
+pf.gamma = 0.02726
+pf.w1 = 1.0
+pf.w12 = 2.0
+pf.w0 = 0.0
+
+### Packed Spheres IC ###
+#phi.ic.type = psread
+#phi.ic.psread.eps = 0.0005
+#phi.ic.psread.filename = /home/mmeierdo/SolidPhase/inputs/Packings/1644946205.703783/2d_z0.000.xyzr
+
+### Sandwhich IC ###
+#phi.ic.type = laminate
+#phi.ic.laminate.number_of_inclusions = 1
+#phi.ic.laminate.center = 0.0 0.0 0.0
+#phi.ic.laminate.thickness = 0.1
+#phi.ic.laminate.orientation = 0 1
+#phi.ic.laminate.eps = 0.015
+#phi.ic.laminate.singlefab = 1
+#phi.ic.laminate.invert = 1
+
+
+### Constant IC ###
+phi.ic.type = constant
+phi.ic.constant.value = 1.0
+
+
+pf.eta.bc.type.xlo = dirichlet
+pf.eta.bc.type.xhi = dirichlet
+pf.eta.bc.type.ylo = periodic
+pf.eta.bc.type.yhi = periodic
+#pf.eta.bc.type.zlo = periodic
+#pf.eta.bc.type.zhi = periodic
+pf.eta.bc.val.xlo = 0.0
+pf.eta.bc.val.xhi = 1.0
+pf.eta.bc.val.ylo = 0.0
+pf.eta.bc.val.yhi = 0.0
+#pf.eta.bc.val.zlo = 0.0
+#pf.eta.bc.val.zhi = 0.0
+
+# THERMAL VARIABLES
+
+thermal.m_ap = 1.222
+thermal.m_htpb = 0.1
+thermal.m_comb = 10.0
+pf.Ea = 650.0
+pf.T0 = 273.0
+
+# mobility preparameter
+thermal.ae_ap   = 4200.0 
+thermal.ae_htpb = 350.0
+thermal.ae_comb = 350.0
+            
+thermal.on = 2  #activates the thermal functions
+thermal.bound = 293.15
+thermal.temperature_delay = 0.0
+
+thermal.rho_ap = 1950.0 # [kg/m3] 
+thermal.rho_htpb = 920.0 # [kg/m3]
+
+thermal.k_ap = 0.4186 # 5.5 [W/mK]
+thermal.k_htpb = 0.13 # 0.283[W/mK]
+thermal.k0 = 0.0 #0.43 
+thermal.k_comb = 0.3 # 0.43[W/mK] for 0.8ap 0.16htpb 0.04al
+
+thermal.cp_ap = 1297.9 #[J/kgK]
+thermal.cp_htpb = 2418.29 #[J/kgK]
+
+thermal.q0 = 0.0
+
+#thermal.q_ap   = 391400000.0 #[J/m3]
+#thermal.q_htpb = 184000000.0 #[J/m3] 
+#thermal.q_comb = 220000000.0 #[J/m3] 
+
+thermal.temp.bc.type.xlo = neumann
+thermal.temp.bc.type.xhi = neumann
+thermal.temp.bc.type.ylo = neumann
+thermal.temp.bc.type.yhi = neumann
+
+thermal.temp.bc.val.xlo = 0.0
+thermal.temp.bc.val.xhi = 0.0
+thermal.temp.bc.val.ylo = 0.0 
+thermal.temp.bc.val.yhi = 0.0
+
+### SET A NON EVOLVING ETA
+#eta.ic.type = laminate
+#eta.ic.laminate.number_of_inclusions = 1
+#eta.ic.laminate.center = 0.05 0 0
+#eta.ic.laminate.thickness = 0.05
+#eta.ic.laminate.orientation = 1 0
+#eta.ic.laminate.mollifier = gaussian
+#eta.ic.laminate.eps = 0.00005
+#eta.ic.laminate.singlefab = 1
+#eta.ic.laminate.invert = 1
+
+### CONSTANT Q
+#thermal.q_ap   = 391400000.0 #[J/m3]
+#thermal.q_htpb = 184000000.0 #[J/m3] 
+#thermal.q_comb = 220000000.0 #[J/m3] 
+
+
+

@@ -28,7 +28,6 @@ pf.n_comb = 0.0 # FIXED
 
 pf.P = 0.2
 
-
 pf.kappa = 1.0
 pf.gamma = 0.02726
 pf.w1 = 1.0

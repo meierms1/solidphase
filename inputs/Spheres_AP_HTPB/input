@@ -1,0 +1,86 @@
+alamo.program = flame
+<<<<<<< HEAD:inputs/AP_HTPB_Spheres/input
+<<<<<<< HEAD
+#plot_file = /mmfs1/home/mmeierdo/output
+#plot_file = output 
+amr.plot_dt = 0.01
+amr.max_level = 6
+=======
+plot_file = output2
+amr.plot_dt = 0.01
+amr.max_level = 5 #8 #7 #5 #6
+>>>>>>> 4c6bdef17ae2394d0e5803788cc44480f8c8f805
+=======
+plot_file = output_0301
+amr.plot_dt = 0.01
+amr.max_level = 6 #8 #7 #5 #6
+>>>>>>> 51453c473682fa7655959cb5bddc20c03c606bbf:inputs/Spheres_AP_HTPB/input
+amr.max_grid_size = 50
+amr.blocking_factor = 2
+amr.regrid_int = 100
+amr.grid_eff = 0.8
+amr.refinement_criterion = 0.01
+<<<<<<< HEAD:inputs/AP_HTPB_Spheres/input
+amr.n_cell = 8 4 2
+geometry.prob_lo = 0.0 -0.4 -0.25
+geometry.prob_hi = 4.0 0.4 0.25
+=======
+
+# FULL SIZE
+amr.n_cell = 8 2 2
+geometry.prob_lo = 0.0 -0.2 -0.2 # [mm]
+geometry.prob_hi = 2.0 0.2 0.2 # [mm]
+
+>>>>>>> 51453c473682fa7655959cb5bddc20c03c606bbf:inputs/Spheres_AP_HTPB/input
+geometry.is_periodic = 0 1 1
+<<<<<<< HEAD
+timestep = 0.00005
+stop_time = 0.1
+pf.eps = 0.0005
+=======
+timestep = 0.00005 # [s]
+stop_time = 4.0
+
+pf.eps = 0.0005 #0.0005 # [mm]
+>>>>>>> 4c6bdef17ae2394d0e5803788cc44480f8c8f805
+pf.lambda = 0.001
+pf.r_ap = 1.222
+pf.n_ap = 1.042
+pf.r_htpb = 0.1
+pf.r_comb = 10.0
+pf.n_htpb = 0.0
+pf.n_comb = 0.0
+pf.P = 1.0
+pf.kappa = 1.0
+pf.gamma = 0.02726
+pf.w1 = 1.0
+pf.w12 = 2.0
+pf.w0 = 0.0
+phi.ic.type = psread
+<<<<<<< HEAD:inputs/AP_HTPB_Spheres/input
+<<<<<<< HEAD
+phi.ic.psread.eps = 0.0005
+phi.ic.psread.filename = ../Packings/1637342279.960635/3d.xyzr
+=======
+phi.ic.psread.eps = 0.005
+phi.ic.psread.filename = ../Packings/1637342279.960635/3d.xyzr
+=======
+phi.ic.psread.eps = 0.0005
+phi.ic.psread.filename = /home/mmeierdo/SolidPhase/inputs/Packings/1644946205.703783/2d_z0.000.xyzr
+>>>>>>> 51453c473682fa7655959cb5bddc20c03c606bbf:inputs/Spheres_AP_HTPB/input
+
+
+>>>>>>> 4c6bdef17ae2394d0e5803788cc44480f8c8f805
+pf.eta.bc.type.xlo = dirichlet
+pf.eta.bc.type.xhi = dirichlet
+pf.eta.bc.type.ylo = periodic
+pf.eta.bc.type.yhi = periodic
+#pf.eta.bc.type.zlo = periodic
+#pf.eta.bc.type.zhi = periodic
+pf.eta.bc.val.xlo = 0.0
+pf.eta.bc.val.xhi = 1.0
+pf.eta.bc.val.ylo = 0.0
+pf.eta.bc.val.yhi = 0.0
+#pf.eta.bc.val.zlo = 0.0
+#pf.eta.bc.val.zhi = 0.0
+
