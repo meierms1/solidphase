@@ -12,32 +12,32 @@ amr.refinement_criterion_temp = 293.16
 amr.refinement_restriction = 0.1
 
 amr.n_cell = 8 2 2
-geometry.prob_lo = 0.0 0.0 0.0 # [ m ] 
-geometry.prob_hi = 0.05 0.02 0.01 # [ m ]
+geometry.prob_lo = 0.0 -0.00025 0.0 # [ m ] 
+geometry.prob_hi = 0.004 0.00025 0.0001 # [ m ]
 
 geometry.is_periodic = 0 1 1
 
 ## TIME EPS ############################################################ TIME EPS
 
-timestep = 5e-4 # 0.00005 # [s]
-stop_time = 1.5
+timestep = 1e-4 # 0.00005 # [s]
+stop_time = 0.5
 
-pf.eps = 0.00005 #0.0005 # [m]
+pf.eps = 0.0000005 #0.0005 # [m]
 pf.lambda = 0.001
 
 ### Constant IC ############################################################ IC
-phi.zeta_0 = 0.001
+phi.zeta_0 = 0.00001
 phi.ic.type = laminate
 phi.ic.number_of_inclusions = 1
 phi.ic.laminate.center = 0.0 0.0 0.0 
-phi.ic.laminate.thickness = 0.02
+phi.ic.laminate.thickness = 1e-4
 phi.ic.laminate.orientation = 0 1 
 phi.ic.laminate.singlefab = 1 
 phi.ic.laminate.invert = 1
-phi.ic.laminate.eps = 0.001
+phi.ic.laminate.eps = 0.00001
 
 #phi.ic.type = constant
-#phi.ic.constant.value = 0.5
+#phi.ic.constant.value = 1.0
 #phi.ic.type = psread
 #phi.ic.psread.eps = 0.00005
 #phi.ic.psread.filename =/home/mmeierdo/solidphase/inputs/Packings/1655487217.681657/2d_z0.000.xyzr
@@ -68,9 +68,9 @@ pf.eta.bc.val.yhi = 0.0
 thermal.m_ap = 1.51 #  151000.0 # 40.22  # [mm/s]
 thermal.m_htpb = 0.1 # [mm/s]
 thermal.m_comb = 10.0 # [mm/s]
-thermal.E_ap = 850.0 # 4.0
-thermal.E_htpb = 850.0
-thermal.E_comb = 850.0
+thermal.E_ap = 721.0 # 4.0
+thermal.E_htpb = 720.0
+thermal.E_comb = 350.0
             
 thermal.on = 1  #activates the thermal functions
 thermal.bound = 275.0
@@ -86,7 +86,7 @@ thermal.k_comb = 0.41 # 0.43[W/mK] for 0.8ap 0.16htpb 0.04al
 
 thermal.cp_ap = 1297.9 #[J/kgK]
 thermal.cp_htpb = 2418.29 #[J/kgK]
-thermal.cp_comb = 8000.28
+thermal.cp_comb = 2400.28
 
 thermal.q0 = 0.0
 
@@ -104,7 +104,7 @@ thermal.correction_factor = 0.5621 #1.7789
 
 ## PRESSURE VARIABLES ######################################################### PRESSURE
 
-pressure.P = 6.0 # 4.0 ## Pressure is to be inputed in MPa units.
+pressure.P = 6.0 ## Pressure is to be inputed in MPa units.
 
 pressure.a1 = 0.46
 pressure.a2 = 1.114 
